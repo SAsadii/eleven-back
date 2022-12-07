@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "firstpage_items",
+  "info": {
+    "singularName": "firstpage-item",
+    "pluralName": "firstpage-items",
+    "displayName": "firstpageItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "info": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "desktopImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "center",
+        "right"
+      ],
+      "required": true
+    }
+  }
+}
