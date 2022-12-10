@@ -12,58 +12,48 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true
     },
     "previewImage": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "images": {
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "images": {
       "type": "media",
       "multiple": true,
-      "required": true
-    },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "keyboard",
-        "mouse",
-        "speaker",
-        "coolpad",
-        "cable",
-        "tabdil",
-        "headset",
-        "headphone",
-        "mousepad",
-        "accessories"
-      ],
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "summary": {
       "type": "richtext"
     },
-    "features": {
-      "type": "json"
-    },
     "driver": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "slug": {
       "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "features": {
+      "type": "richtext"
     }
   }
 }
