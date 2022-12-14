@@ -6,4 +6,15 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::product.product');
+module.exports = createCoreController('api::product.product',({strapi}) => ({
+    async findOne(ctx) {
+      const { slug, id } = ctx.params
+      const entity = await strapi.db.query('api::product.product').findOne({
+        where: { slug: id }
+      })
+      const sanitizedEntity = await this.sanitizeOutput(entity)
+
+      return this.transformResponse(sanitizedEntity)
+    }
+  }
+));

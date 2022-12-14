@@ -2,11 +2,11 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: env('DATABASE_HOST', 'elevendb'),
+      host: env('DATABASE_HOST', 'localhost'),
       port: env.int('DATABASE_PORT', 5432),
       database: env('DATABASE_NAME', 'postgres'),
-      user: env('DATABASE_USERNAME', 'root'),
-      password: env('DATABASE_PASSWORD', 'cb9kfgGiJVWavmfAkBNfwpIf'),
+      user: env('DATABASE_USERNAME', 'postgres'),
+      password: env('DATABASE_PASSWORD', ''),
       schema: env('DATABASE_SCHEMA', 'public'), // Not required
       ssl: false,
     },
